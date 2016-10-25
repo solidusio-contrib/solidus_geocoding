@@ -29,5 +29,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rubocop-rspec', '1.4.0'
   s.add_development_dependency 'simplecov'
   s.add_development_dependency 'sqlite3'
-  s.add_development_dependency 'geocoder'
+
+  s.add_runtime_dependency 'geocoder'
 end
