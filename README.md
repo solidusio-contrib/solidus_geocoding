@@ -1,7 +1,9 @@
 SolidusGeocoding
 ================
 
-Introduction goes here.
+Add geocoding to `Spree::Address`.
+
+See https://github.com/alexreisner/geocoder
 
 Installation
 ------------
