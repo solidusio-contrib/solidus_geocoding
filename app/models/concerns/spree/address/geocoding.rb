@@ -1,0 +1,24 @@
+module Spree
+  class Address
+    module Geocoding
+      extend ActiveSupport::Concern
+
+      included do
+        geocoded_by :full_address
+        after_validation :geocode
+      end
+
+      ##
+      # The full address.
+      #
+      # @example Get the full address.
+      #   address.full_name # "street, city, state, country"
+      #
+      # @return [String] The full street address wit city, state and country.
+      #
+      def full_address
+        [address1, address2.presence, city, state_text, country.try(:iso)].compact.join(', ')
+      end
+    end
+  end
+end
