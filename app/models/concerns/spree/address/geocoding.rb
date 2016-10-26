@@ -1,11 +1,18 @@
 module Spree
   class Address
+    ##
+    # Adds geocoding methods to `Spree::Address`
+    #
     module Geocoding
       extend ActiveSupport::Concern
 
       included do
         geocoded_by :full_address
-        after_validation :geocode
+
+        ##
+        # Addresses are readonly so be sure to only
+        # perform geocode on create.
+        after_validation :geocode, on: [:create]
       end
 
       ##
