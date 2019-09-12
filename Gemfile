@@ -3,23 +3,23 @@ source 'https://rubygems.org'
 branch = ENV.fetch('SOLIDUS_BRANCH', 'master')
 gem 'solidus', github: 'solidusio/solidus', branch: branch
 
-if branch == 'master' || branch >= 'v2.3'
-  gem 'rails', '~> 5.1.0'
-elsif branch >= 'v2.0'
-  gem 'rails', '~> 5.0.0'
+# Needed to help Bundler figure out how to resolve dependencies, otherwise it takes forever to
+# resolve them
+if branch == 'master' || Gem::Version.new(branch[1..-1]) >= Gem::Version.new('2.10.0')
+  gem 'rails', '~> 6.0'
 else
-  gem 'rails_test_params_backport'
-  gem 'rails', '~> 4.2.7'
+  gem 'rails', '~> 5.0'
 end
 
-if branch < "v2.5"
-  gem 'factory_bot', '4.10.0'
-else
-  gem 'factory_bot', '> 4.10.0'
-end
+gem 'factory_bot', '> 4.10.0'
 
-gem 'sqlite3'
-gem 'pg', '~> 0.21'
-gem 'mysql2', '~> 0.4.10'
+case ENV['DB']
+when 'mysql'
+  gem 'mysql2', '~> 0.4.10'
+when 'postgres'
+  gem 'pg', '~> 0.21'
+else
+  gem 'sqlite3'
+end
 
 gemspec
