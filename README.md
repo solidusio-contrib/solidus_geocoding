@@ -1,6 +1,8 @@
 SolidusGeocoding
 ================
 
+[![CircleCI](https://circleci.com/gh/solidusio-contrib/solidus_geocoding.svg?style=svg)](https://circleci.com/gh/solidusio-contrib/solidus_geocoding)
+
 Add geocoding to `Spree::Address`.
 
 See https://github.com/alexreisner/geocoder
