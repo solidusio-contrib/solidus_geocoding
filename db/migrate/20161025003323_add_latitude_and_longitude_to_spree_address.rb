@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddLatitudeAndLongitudeToSpreeAddress < SolidusSupport::Migration[4.2]
   def change
     add_column :spree_addresses, :latitude, :float
