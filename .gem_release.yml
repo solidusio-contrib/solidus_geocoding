@@ -1,0 +1,5 @@
+bump:
+  recurse: false
+  file: 'lib/solidus_geocoding/version.rb'
+  message: Bump SolidusGeocoding to %{version}
+  branch: true
