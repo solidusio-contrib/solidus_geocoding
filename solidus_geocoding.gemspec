@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
 
   s.author = 'Taylor Scott'
   s.email  = 't.skukx@gmail.com'
+  s.homepage = 'https://github.com/solidusio-contrib/solidus_geocoding'
 
   if s.respond_to?(:metadata)
     s.metadata["homepage_uri"] = s.homepage if s.homepage
